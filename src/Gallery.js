@@ -57,6 +57,7 @@ export default class Gallery extends PureComponent {
 
     componentWillMount () {
         let onResponderReleaseOrTerminate = (evt, gestureState) => {
+            this.props.onRelease(gestureState);
             if (this.activeResponder) {
                 if (this.activeResponder === this.viewPagerResponder &&
                     !this.shouldScrollViewPager(evt, gestureState) &&
